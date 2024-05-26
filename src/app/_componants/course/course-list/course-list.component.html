@@ -1,0 +1,25 @@
+<div class="container">
+<h2>Available Courses</h2>
+<button name="addCourse" class="btn btn-primary" routerLink="/addCourse">Add Course</button>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Course Code</th>
+        <th scope="col">Course Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">Duration</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let course of courseList">
+        <th scope="row"></th>
+        <td>{{course.courseCode}}</td>
+        <td>{{course.courseName}}</td>
+        <td>{{course.description}}</td>
+        <td>{{course.duration}}</td>
+      </tr>
+     
+    </tbody>
+</table>
+</div>
