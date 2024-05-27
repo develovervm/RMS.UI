@@ -45,5 +45,8 @@ export class CourseAddComponent implements OnInit {
     console.log(this.course);
     console.log(this.courseForm.value);
   }
+  Update(){
+    
+  }
   
 }
