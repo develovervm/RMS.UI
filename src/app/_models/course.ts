@@ -4,5 +4,5 @@ export class Course {
     courseName!: string;
     description!: string;
     duration!: string;
-    userName!:string;
+    userId!:number;
 }

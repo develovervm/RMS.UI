@@ -27,4 +27,22 @@ export class CourseListComponent implements OnInit {
       error:(err)=>console.log(err)
     })
   }
+
+  deleteCourse(courseId:any){
+    var result=confirm("are you sure, you want to delete the record");
+    
+    if(result){
+      this.courseService.deleteCourse(courseId).subscribe({
+        next:(res)=>{
+          console.log(res)
+          if(res){
+            this.getCourses();
+          }
+        },
+        error:(err)=>{
+          console.log(err)
+        }
+      })
+    }
+  }
 }

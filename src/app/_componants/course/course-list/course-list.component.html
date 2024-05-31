@@ -1,6 +1,6 @@
 <div class="container">
 <h2>Available Courses</h2>
-<button name="addCourse" class="btn btn-primary" routerLink="/addCourse">Add Course</button>
+<button name="addCourse" class="btn btn-primary" routerLink="/addCourse/0">Add Course</button>
 <table class="table">
     <thead>
       <tr>
@@ -13,7 +13,11 @@
     </thead>
     <tbody>
       <tr *ngFor="let course of courseList">
-        <th scope="row"></th>
+        <th scope="row"> 
+          <a class="mx-2" routerLink="/addCourse/{{course.id}}"><i class="bi bi-pencil-fill"></i></a> 
+          <a class="mx-2" (click)="deleteCourse(course.id)"><i class="bi bi-archive-fill"></i></a>
+        </th>
+        
         <td>{{course.courseCode}}</td>
         <td>{{course.courseName}}</td>
         <td>{{course.description}}</td>
