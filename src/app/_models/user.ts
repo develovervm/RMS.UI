@@ -4,4 +4,5 @@ export class User
     password!:string;
     userType!:string;
     id!:number;
+    token!:string;
 }
