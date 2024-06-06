@@ -5,19 +5,16 @@ import { take } from 'rxjs';
 import { User } from '../_models/user';
 
 export const tokenInterceptor: HttpInterceptorFn = (req, next) => {
-   const accountService=Inject(AccountService);
-
-   accountService.currentUser$.pipe(take(1)).subscribe({
-    next:(user:User)=>{
-      if(user){
-        req=req.clone({
-          setHeaders:{
-            Authorization:`Bearer ${user.token}`
-          }
-        })
-      }
+   
+   let token = localStorage.getItem('access_token');
+    if (token) {
+      req = req.clone({
+        setHeaders: {
+          Authorization: `Bearer ${token}`
+        }
+      });
     }
-   })
+
    console.log(req)
   return next(req);
 };

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { Login } from '../../_models/login';
@@ -14,13 +14,14 @@ import { User } from '../../_models/user';
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
-export class HeaderComponent {
+export class HeaderComponent  {
   
   login:Login=new Login;
   message:string='';
   isLoggedIn=false;
   userName='';
   constructor(private accountService:AccountService,private router:Router){}
+ 
   Login(){
     this.accountService.login(this.login).subscribe({
       next:response=>{

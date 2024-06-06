@@ -25,7 +25,8 @@ export class AccountService {
       map((response:User)=>{
        const user=response;
        if(user){
-        console.log(user)
+        console.log(response)
+        localStorage.setItem('access_token',user.token);
         this.currentUserSource.next(user);
        }
        

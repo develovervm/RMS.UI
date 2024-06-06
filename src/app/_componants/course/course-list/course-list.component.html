@@ -1,21 +1,24 @@
 <div class="container">
 <h2>Available Courses</h2>
-<button name="addCourse" class="btn btn-primary" routerLink="/addCourse/0">Add Course</button>
+<button name="addCourse" *ngIf="userType=='Admin'" class="btn btn-primary" routerLink="/addCourse/0">Add Course</button>
 <table class="table">
     <thead>
       <tr>
         <th scope="col">#</th>
-        <th scope="col">Course Code</th>
-        <th scope="col">Course Name</th>
-        <th scope="col">Description</th>
-        <th scope="col">Duration</th>
+        <th scope="col" class="tableHeader">Course Code</th>
+        <th scope="col" class="tableHeader">Course Name</th>
+        <th scope="col" class="tableHeader">Description</th>
+        <th scope="col" class="tableHeader">Duration</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let course of courseList">
         <th scope="row"> 
-          <a class="mx-2" routerLink="/addCourse/{{course.id}}"><i class="bi bi-pencil-fill"></i></a> 
-          <a class="mx-2" (click)="deleteCourse(course.id)"><i class="bi bi-archive-fill"></i></a>
+          <div *ngIf="userType=='Admin'">
+            <a class="mx-2" routerLink="/addCourse/{{course.id}}"><i class="bi bi-pencil-fill"></i></a> 
+            <a class="mx-2" (click)="deleteCourse(course.id)"><i class="bi bi-archive-fill"></i></a>
+          </div>
+          
         </th>
         
         <td>{{course.courseCode}}</td>

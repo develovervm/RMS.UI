@@ -3,7 +3,7 @@
     <form #registrationForm="ngForm" (ngSubmit)="Register()">
         <div class="row mt-3">
             <div class="col-4">
-                <label>User Name</label>
+                <label >User Name</label>
                 <input type="text" class="form-control" [(ngModel)]="user.userName" name="userName">
             </div>
 
@@ -22,7 +22,7 @@
                 <select name="userType" class="form-control" [(ngModel)]="user.userType">
                     <option>Select User Type</option>
                     <option>Admin</option>
-                    <option>Supervisor</option>
+                    <option>Teacher</option>
                     <option>Student</option>
                 </select>
             </div>

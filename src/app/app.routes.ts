@@ -11,4 +11,5 @@ export const routes: Routes = [
     {path:'dashboard',component:DashboardComponent},
     {path:'courseList',component:CourseListComponent},
     {path:'addCourse/:courseId',component:CourseAddComponent}
+    
 ];
